@@ -1,4 +1,5 @@
 ﻿using QuanLyCafe.DAO;
+using QuanLyCafe.DTO;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,29 +16,54 @@ using System.Windows.Forms;
 
 namespace QuanLyCafe
 {
-    public partial class formadmin : Form
+    public partial class tbfoodcategory : Form
     {
-        public formadmin()
+        BindingSource foodList = new BindingSource();
+        public tbfoodcategory()
         {
+            dtgvFood.DataSource = foodList;
+            if (dtgvFood.DataSource == null)
+                return;
             InitializeComponent();
-            LoadAccountList();
+            LoadFoodList();
+            LoadListByDate(dtpkleft.Value, dtpkright.Value);
+            LoadDateTimePickerBill();
+            AddFoodBinding();
+            LoadCategoryIntoCombobox(cbfoodcategory);
         }
-        void LoadAccountList()
+        #region Method
+        void LoadDateTimePickerBill()
         {
-            string query = "exec dbo.usp_GetAccountByUserName @userName";
-            
-            dtgvaccount.DataSource = DataProvider.Instance.ExecuteQuery(query,new object[] { "K9" });
+            DateTime today = DateTime.Now;
+            dtpkleft.Value = new DateTime(today.Year, today.Month, 1);
+            dtpkright.Value = dtpkleft.Value.AddMonths(1).AddDays(-1);
+        
         }
         void LoadFoodList()
         {
-            string query = "select * from Food";
-
-            dtgvFood.DataSource = DataProvider.Instance.ExecuteQuery(query);
+            foodList.DataSource = Food.Instance.GetListFood();
         }
+        void LoadListByDate(DateTime checkIn,DateTime checkOut)
+        {
+            dtgvbill.DataSource=Bill.Instance.GetBillListByDate(checkIn, checkOut);
 
-     
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        }
+        void AddFoodBinding()
+        {
+            
+            tbfoodname.DataBindings.Add(new Binding("Text", dtgvFood.DataSource, "Name"));
+            tbfoodid.DataBindings.Add(new Binding("Text", dtgvFood.DataSource, "ID"));
+            nmprice.DataBindings.Add(new Binding("Value", dtgvFood.DataSource, "Price"));
+    
+        }
+        void LoadCategoryIntoCombobox(ComboBox box)
+        {
+            box.DataSource = Category.Instance.GetListCategory();
+            box.DisplayMember = "Name";
+        }
+        #endregion
+        #region event
+        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }
@@ -80,6 +106,54 @@ namespace QuanLyCafe
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void fthongke_Click(object sender, EventArgs e)
+        {
+            LoadListByDate(dtpkleft.Value, dtpkright.Value);
+        }
+        #endregion
+
+        private void dtgvbill_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (dtgvFood.SelectedCells.Count > 0)
+            {
+                int id = (int)dtgvFood.SelectedCells[0].OwningRow.Cells["CategoryID"].Value;
+
+                CategoryDTO cateogory = Category.Instance.GetCategoryByID(id);
+
+                cbfoodcategory.SelectedItem = cateogory;
+
+                int index = -1;
+                int i = 0;
+                foreach (CategoryDTO item in cbfoodcategory.Items)
+                {
+                    if (item.ID == cateogory.ID)
+                    {
+                        index = i;
+                        break;
+                    }
+                    i++;
+                }
+            
+           
+            cbfoodcategory.SelectedIndex = index;
+            }
         }
     }
 }

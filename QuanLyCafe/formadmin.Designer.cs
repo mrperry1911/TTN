@@ -1,6 +1,6 @@
 ﻿namespace QuanLyCafe
 {
-    partial class formadmin
+    partial class tbfoodcategory
     {
         /// <summary>
         /// Required designer variable.
@@ -80,17 +80,17 @@
             this.faddver2 = new System.Windows.Forms.Button();
             this.tabfood = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cbcategory = new System.Windows.Forms.TextBox();
             this.fsearch = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.nmprice = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbfoodcategory = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbfoodname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -105,11 +105,12 @@
             this.tabbill = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.fthongke = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpkright = new System.Windows.Forms.DateTimePicker();
+            this.dtpkleft = new System.Windows.Forms.DateTimePicker();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtgvbill = new System.Windows.Forms.DataGridView();
-            this.total = new System.Windows.Forms.TabControl();
+            this.tbfoodid = new System.Windows.Forms.TabControl();
+            this.expandableSplitter1 = new DevComponents.DotNetBar.ExpandableSplitter();
             this.tabacc.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -135,7 +136,7 @@
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmprice)).BeginInit();
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -146,7 +147,7 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvbill)).BeginInit();
-            this.total.SuspendLayout();
+            this.tbfoodid.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabacc
@@ -631,19 +632,19 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.textBox1);
+            this.panel8.Controls.Add(this.cbcategory);
             this.panel8.Controls.Add(this.fsearch);
             this.panel8.Location = new System.Drawing.Point(302, 3);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(253, 63);
             this.panel8.TabIndex = 3;
             // 
-            // textBox1
+            // cbcategory
             // 
-            this.textBox1.Location = new System.Drawing.Point(7, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 20);
-            this.textBox1.TabIndex = 1;
+            this.cbcategory.Location = new System.Drawing.Point(7, 23);
+            this.cbcategory.Name = "cbcategory";
+            this.cbcategory.Size = new System.Drawing.Size(159, 20);
+            this.cbcategory.TabIndex = 1;
             // 
             // fsearch
             // 
@@ -667,25 +668,25 @@
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.numericUpDown2);
+            this.panel12.Controls.Add(this.nmprice);
             this.panel12.Controls.Add(this.label4);
             this.panel12.Location = new System.Drawing.Point(6, 154);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(240, 33);
             this.panel12.TabIndex = 5;
             // 
-            // numericUpDown2
+            // nmprice
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(98, 9);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.nmprice.Location = new System.Drawing.Point(98, 9);
+            this.nmprice.Maximum = new decimal(new int[] {
             1000000000,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(138, 20);
-            this.numericUpDown2.TabIndex = 1;
-            this.numericUpDown2.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
+            this.nmprice.Name = "nmprice";
+            this.nmprice.Size = new System.Drawing.Size(138, 20);
+            this.nmprice.TabIndex = 1;
+            this.nmprice.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
             // 
             // label4
             // 
@@ -699,20 +700,20 @@
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.comboBox2);
+            this.panel11.Controls.Add(this.cbfoodcategory);
             this.panel11.Controls.Add(this.label3);
             this.panel11.Location = new System.Drawing.Point(6, 106);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(240, 33);
             this.panel11.TabIndex = 4;
             // 
-            // comboBox2
+            // cbfoodcategory
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(98, 7);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(138, 21);
-            this.comboBox2.TabIndex = 1;
+            this.cbfoodcategory.FormattingEnabled = true;
+            this.cbfoodcategory.Location = new System.Drawing.Point(98, 7);
+            this.cbfoodcategory.Name = "cbfoodcategory";
+            this.cbfoodcategory.Size = new System.Drawing.Size(138, 21);
+            this.cbfoodcategory.TabIndex = 1;
             // 
             // label3
             // 
@@ -723,22 +724,23 @@
             this.label3.Size = new System.Drawing.Size(97, 19);
             this.label3.TabIndex = 0;
             this.label3.Text = "Danh mục :";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel10
             // 
-            this.panel10.Controls.Add(this.textBox3);
+            this.panel10.Controls.Add(this.tbfoodname);
             this.panel10.Controls.Add(this.label2);
             this.panel10.Location = new System.Drawing.Point(6, 55);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(240, 33);
             this.panel10.TabIndex = 3;
             // 
-            // textBox3
+            // tbfoodname
             // 
-            this.textBox3.Location = new System.Drawing.Point(98, 7);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(138, 20);
-            this.textBox3.TabIndex = 1;
+            this.tbfoodname.Location = new System.Drawing.Point(98, 7);
+            this.tbfoodname.Name = "tbfoodname";
+            this.tbfoodname.Size = new System.Drawing.Size(138, 20);
+            this.tbfoodname.TabIndex = 1;
             // 
             // label2
             // 
@@ -749,6 +751,7 @@
             this.label2.Size = new System.Drawing.Size(86, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên món :";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel9
             // 
@@ -766,6 +769,7 @@
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(138, 20);
             this.textBox2.TabIndex = 1;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label1
             // 
@@ -845,6 +849,7 @@
             // 
             // tabbill
             // 
+            this.tabbill.Controls.Add(this.expandableSplitter1);
             this.tabbill.Controls.Add(this.panel4);
             this.tabbill.Controls.Add(this.panel3);
             this.tabbill.Location = new System.Drawing.Point(4, 22);
@@ -858,8 +863,8 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.fthongke);
-            this.panel4.Controls.Add(this.dateTimePicker2);
-            this.panel4.Controls.Add(this.dateTimePicker1);
+            this.panel4.Controls.Add(this.dtpkright);
+            this.panel4.Controls.Add(this.dtpkleft);
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(549, 28);
@@ -873,21 +878,21 @@
             this.fthongke.TabIndex = 2;
             this.fthongke.Text = "Thống kê";
             this.fthongke.UseVisualStyleBackColor = true;
+            this.fthongke.Click += new System.EventHandler(this.fthongke_Click);
             // 
-            // dateTimePicker2
+            // dtpkright
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(346, 5);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 1;
+            this.dtpkright.Location = new System.Drawing.Point(346, 5);
+            this.dtpkright.Name = "dtpkright";
+            this.dtpkright.Size = new System.Drawing.Size(200, 20);
+            this.dtpkright.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // dtpkleft
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(-3, 5);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 0;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dtpkleft.Location = new System.Drawing.Point(-3, 5);
+            this.dtpkleft.Name = "dtpkleft";
+            this.dtpkleft.Size = new System.Drawing.Size(200, 20);
+            this.dtpkleft.TabIndex = 0;
             // 
             // panel3
             // 
@@ -899,33 +904,67 @@
             // 
             // dtgvbill
             // 
+            this.dtgvbill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvbill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvbill.Location = new System.Drawing.Point(0, 0);
             this.dtgvbill.Name = "dtgvbill";
             this.dtgvbill.Size = new System.Drawing.Size(546, 251);
             this.dtgvbill.TabIndex = 0;
+            this.dtgvbill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvbill_CellContentClick);
             // 
-            // total
+            // tbfoodid
             // 
-            this.total.Controls.Add(this.tabbill);
-            this.total.Controls.Add(this.tabfood);
-            this.total.Controls.Add(this.tablist);
-            this.total.Controls.Add(this.tabtable);
-            this.total.Controls.Add(this.tabacc);
-            this.total.Location = new System.Drawing.Point(12, 12);
-            this.total.Name = "total";
-            this.total.SelectedIndex = 0;
-            this.total.Size = new System.Drawing.Size(563, 318);
-            this.total.TabIndex = 0;
+            this.tbfoodid.Controls.Add(this.tabbill);
+            this.tbfoodid.Controls.Add(this.tabfood);
+            this.tbfoodid.Controls.Add(this.tablist);
+            this.tbfoodid.Controls.Add(this.tabtable);
+            this.tbfoodid.Controls.Add(this.tabacc);
+            this.tbfoodid.Location = new System.Drawing.Point(12, 12);
+            this.tbfoodid.Name = "tbfoodid";
+            this.tbfoodid.SelectedIndex = 0;
+            this.tbfoodid.Size = new System.Drawing.Size(563, 318);
+            this.tbfoodid.TabIndex = 0;
             // 
-            // formadmin
+            // expandableSplitter1
+            // 
+            this.expandableSplitter1.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
+            this.expandableSplitter1.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.expandableSplitter1.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.expandableSplitter1.ExpandFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
+            this.expandableSplitter1.ExpandFillColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.expandableSplitter1.ExpandLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.expandableSplitter1.ExpandLineColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
+            this.expandableSplitter1.GripDarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.expandableSplitter1.GripDarkColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
+            this.expandableSplitter1.GripLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.expandableSplitter1.GripLightColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.expandableSplitter1.HotBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(151)))), ((int)(((byte)(61)))));
+            this.expandableSplitter1.HotBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(94)))));
+            this.expandableSplitter1.HotBackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground2;
+            this.expandableSplitter1.HotBackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground;
+            this.expandableSplitter1.HotExpandFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
+            this.expandableSplitter1.HotExpandFillColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.expandableSplitter1.HotExpandLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.expandableSplitter1.HotExpandLineColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
+            this.expandableSplitter1.HotGripDarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
+            this.expandableSplitter1.HotGripDarkColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.expandableSplitter1.HotGripLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.expandableSplitter1.HotGripLightColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.expandableSplitter1.Location = new System.Drawing.Point(3, 3);
+            this.expandableSplitter1.Name = "expandableSplitter1";
+            this.expandableSplitter1.Size = new System.Drawing.Size(6, 286);
+            this.expandableSplitter1.Style = DevComponents.DotNetBar.eSplitterStyle.Office2007;
+            this.expandableSplitter1.TabIndex = 2;
+            this.expandableSplitter1.TabStop = false;
+            // 
+            // tbfoodcategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(587, 342);
-            this.Controls.Add(this.total);
-            this.Name = "formadmin";
+            this.Controls.Add(this.tbfoodid);
+            this.Name = "tbfoodcategory";
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.formadmin_Load);
             this.tabacc.ResumeLayout(false);
@@ -963,7 +1002,7 @@
             this.panel7.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmprice)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel10.ResumeLayout(false);
@@ -977,7 +1016,7 @@
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvbill)).EndInit();
-            this.total.ResumeLayout(false);
+            this.tbfoodid.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1016,16 +1055,16 @@
         private System.Windows.Forms.Button faddver2;
         private System.Windows.Forms.TabPage tabfood;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox cbcategory;
         private System.Windows.Forms.Button fsearch;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown nmprice;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbfoodname;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.TextBox textBox2;
@@ -1040,11 +1079,11 @@
         private System.Windows.Forms.TabPage tabbill;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button fthongke;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpkright;
+        private System.Windows.Forms.DateTimePicker dtpkleft;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dtgvbill;
-        private System.Windows.Forms.TabControl total;
+        private System.Windows.Forms.TabControl tbfoodid;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -1064,7 +1103,8 @@
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button freset;
+        private System.Windows.Forms.ComboBox cbfoodcategory;
+        private DevComponents.DotNetBar.ExpandableSplitter expandableSplitter1;
     }
 }

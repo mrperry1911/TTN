@@ -92,7 +92,8 @@
             this.tbpassword.Location = new System.Drawing.Point(147, 3);
             this.tbpassword.Name = "tbpassword";
             this.tbpassword.Size = new System.Drawing.Size(198, 20);
-            this.tbpassword.TabIndex = 1;
+            this.tbpassword.TabIndex = 2;
+            this.tbpassword.Text = "admin";
             // 
             // label2
             // 
@@ -119,6 +120,7 @@
             this.tbusername.Name = "tbusername";
             this.tbusername.Size = new System.Drawing.Size(198, 20);
             this.tbusername.TabIndex = 1;
+            this.tbusername.Text = "admin";
             // 
             // label1
             // 

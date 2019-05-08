@@ -9,9 +9,6 @@ namespace QuanLyCafe.DTO
 {
     public class TableDTO
     {
-        private string name;
-        private int iD;
-        private string status;
         public TableDTO(int id, string name, string status)
         {
             this.ID = id;
@@ -25,9 +22,23 @@ namespace QuanLyCafe.DTO
             this.Name = row["name"].ToString();
             this.Status = row["status"].ToString();
         }
-      
-        internal string Status { get => status; set => status = value; }
-        internal string Name { get => name; set => name = value; }
-        internal int ID { get => iD; set => iD = value; }
+
+        public string Status { get; set; }
+
+        private string name;
+
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        private int iD;
+
+        public int ID
+        {
+            get { return iD; }
+            set { iD = value; }
+        }
     }
 }

@@ -10,4 +10,7 @@ C:\Users\Phuc\source\repos\QuanLyCafe\QuanLyCafe\obj\Debug\QuanLyCafe.exe
 C:\Users\Phuc\source\repos\QuanLyCafe\QuanLyCafe\obj\Debug\QuanLyCafe.pdb
 C:\Users\Phuc\source\repos\QuanLyCafe\QuanLyCafe\obj\Debug\QuanLyCafe.ftablemanager.resources
 C:\Users\Phuc\source\repos\QuanLyCafe\QuanLyCafe\obj\Debug\QuanLyCafe.faccountprofile.resources
-C:\Users\Phuc\source\repos\QuanLyCafe\QuanLyCafe\obj\Debug\QuanLyCafe.formadmin.resources
+C:\Users\Phuc\source\repos\QuanLyCafe\QuanLyCafe\obj\Debug\QuanLyCafe.tbfoodcategory.resources
+C:\Users\Phuc\source\repos\QuanLyCafe\QuanLyCafe\bin\Debug\DevComponents.DotNetBar2.dll
+C:\Users\Phuc\source\repos\QuanLyCafe\QuanLyCafe\bin\Debug\DevComponents.DotNetBar2.xml
+C:\Users\Phuc\source\repos\QuanLyCafe\QuanLyCafe\obj\Debug\QuanLyCafe.csproj.CopyComplete

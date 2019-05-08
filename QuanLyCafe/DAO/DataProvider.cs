@@ -14,14 +14,16 @@ namespace QuanLyCafe.DAO
         private string connectionSTR = "Data Source=DESKTOP-JVSARLR;Initial Catalog=QuanLyCafe;Integrated Security=True";
 
         internal static DataProvider Instance { get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; } private set { DataProvider.instance = value; } }
- 
+
 
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
+
             using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
                 connection.Open();
+
                 SqlCommand command = new SqlCommand(query, connection);
 
                 if (parameter != null)
@@ -39,6 +41,7 @@ namespace QuanLyCafe.DAO
                 }
 
                 data = command.ExecuteNonQuery();
+
                 connection.Close();
             }
 

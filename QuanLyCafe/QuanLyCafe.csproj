@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.28, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,8 +48,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\Account.cs" />
+    <Compile Include="DAO\Bill.cs" />
+    <Compile Include="DAO\BillInfo.cs" />
+    <Compile Include="DAO\Category.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\Food.cs" />
+    <Compile Include="DAO\Menu.cs" />
     <Compile Include="DAO\Table.cs" />
+    <Compile Include="DTO\AccountDTO.cs" />
+    <Compile Include="DTO\BillDTO.cs" />
+    <Compile Include="DTO\BillinfoDTO.cs" />
+    <Compile Include="DTO\CategoryDTO.cs" />
+    <Compile Include="DTO\FoodDTO.cs" />
+    <Compile Include="DTO\MenuDTO.cs" />
     <Compile Include="DTO\TableDTO.cs" />
     <Compile Include="fAccountProfile.cs">
       <SubType>Form</SubType>

@@ -1,4 +1,5 @@
 ﻿using QuanLyCafe.DAO;
+using QuanLyCafe.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,7 +35,8 @@ namespace QuanLyCafe
             string passWord = tbpassword.Text;
             if (Login(userName, passWord))
             {
-                ftablemanager f = new ftablemanager();
+                AccountDTO loginaccount = Account.Instance.GetAccountByUserName(userName);
+                ftablemanager f = new ftablemanager(loginaccount);
                 this.Hide();
                 f.ShowDialog();
                 this.Show();
