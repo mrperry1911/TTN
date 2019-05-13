@@ -21,10 +21,10 @@ namespace QuanLyCafe
         BindingSource foodList = new BindingSource();
         public tbfoodcategory()
         {
-            dtgvFood.DataSource = foodList;
-            if (dtgvFood.DataSource == null)
-                return;
+            
+            
             InitializeComponent();
+            dtgvFood.DataSource = foodList;
             LoadFoodList();
             LoadListByDate(dtpkleft.Value, dtpkright.Value);
             LoadDateTimePickerBill();
@@ -52,7 +52,7 @@ namespace QuanLyCafe
         {
             
             tbfoodname.DataBindings.Add(new Binding("Text", dtgvFood.DataSource, "Name"));
-            tbfoodid.DataBindings.Add(new Binding("Text", dtgvFood.DataSource, "ID"));
+            textBox2.DataBindings.Add(new Binding("Text", dtgvFood.DataSource, "ID"));
             nmprice.DataBindings.Add(new Binding("Value", dtgvFood.DataSource, "Price"));
     
         }
@@ -105,7 +105,7 @@ namespace QuanLyCafe
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void fthongke_Click(object sender, EventArgs e)
@@ -129,7 +129,7 @@ namespace QuanLyCafe
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void textBox2_TextChanged(object sender, EventArgs e) //categoryName
         {
             if (dtgvFood.SelectedCells.Count > 0)
             {
@@ -154,6 +154,11 @@ namespace QuanLyCafe
            
             cbfoodcategory.SelectedIndex = index;
             }
+        }
+
+        private void expandableSplitter2_ExpandedChanged(object sender, DevComponents.DotNetBar.ExpandedChangeEventArgs e)
+        {
+
         }
     }
 }
