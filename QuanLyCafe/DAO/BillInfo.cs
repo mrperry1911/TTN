@@ -28,11 +28,15 @@ namespace QuanLyCafe.DAO
             }
             return listbillinfo;
         }
-        public void InsertBillInfo(int idbill,int idfood,int count)
+        public void InsertBillInfo(int idbill, int idfood, int count)
         {
             string query = "usp_InsertBillinfo @idbill , @idfood , @count";
-            DataProvider.Instance.ExecuteNonQuery(query, new object[] { idbill,idfood,count });
+            DataProvider.Instance.ExecuteNonQuery(query, new object[] { idbill, idfood, count });
 
+        }
+        public void DeleteBillInfoByFoodID(int id)
+        {
+            DataProvider.Instance.ExecuteQuery("delete dbo.BillInfo where idFood = " + id);
         }
     } 
 }

@@ -143,8 +143,33 @@ namespace QuanLyCafe
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tbfoodcategory f = new tbfoodcategory();
+            f.InsertFood += f_InsertFood;
+            f.DeleteFood += f_DeleteFood;
+            f.UpdateFood += f_UpdateFood;
             f.ShowDialog();
         }
+        void f_UpdateFood(object sender, EventArgs e)
+        {
+            LoadFoodListByCategory((cbCategory.SelectedItem as CategoryDTO).ID);
+            if (lvbill.Tag != null)
+                ShowBill((lvbill.Tag as TableDTO).ID);
+        }
+
+        void f_DeleteFood(object sender, EventArgs e)
+        {
+            LoadFoodListByCategory((cbCategory.SelectedItem as CategoryDTO).ID);
+            if (lvbill.Tag != null)
+                ShowBill((lvbill.Tag as TableDTO).ID);
+            LoadTable();
+        }
+
+        void f_InsertFood(object sender, EventArgs e)
+        {
+            LoadFoodListByCategory((cbCategory.SelectedItem as CategoryDTO).ID);
+            if (lvbill.Tag != null)
+                ShowBill((lvbill.Tag as TableDTO).ID);
+        }
+
 
         private void flowpaneltable_Paint(object sender, PaintEventArgs e)
         {

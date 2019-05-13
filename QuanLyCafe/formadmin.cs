@@ -51,9 +51,9 @@ namespace QuanLyCafe
         void AddFoodBinding()
         {
             
-            tbfoodname.DataBindings.Add(new Binding("Text", dtgvFood.DataSource, "Name"));
-            textBox2.DataBindings.Add(new Binding("Text", dtgvFood.DataSource, "ID"));
-            nmprice.DataBindings.Add(new Binding("Value", dtgvFood.DataSource, "Price"));
+            tbfoodname.DataBindings.Add(new Binding("Text", dtgvFood.DataSource, "Name", true, DataSourceUpdateMode.Never));
+            tbfoodID.DataBindings.Add(new Binding("Text", dtgvFood.DataSource, "ID", true, DataSourceUpdateMode.Never));
+            nmprice.DataBindings.Add(new Binding("Value", dtgvFood.DataSource, "Price", true, DataSourceUpdateMode.Never));
     
         }
         void LoadCategoryIntoCombobox(ComboBox box)
@@ -68,9 +68,24 @@ namespace QuanLyCafe
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void fedit_Click(object sender, EventArgs e)
         {
+            string name = tbfoodname.Text;
+            int categoryID = (cbfoodcategory.SelectedItem as CategoryDTO).ID;
+            float price = (float)nmprice.Value;
+            int id = Convert.ToInt32(tbfoodID.Text);
 
+            if (Food.Instance.UpdateFood(id, name, categoryID, price))
+            {
+                MessageBox.Show("Sửa món thành công");
+                LoadFoodList();
+                if (updateFood != null)
+                    updateFood(this, new EventArgs());
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi sửa thức ăn");
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -129,7 +144,7 @@ namespace QuanLyCafe
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e) //categoryName
+        private void tbfoodID_TextChanged(object sender, EventArgs e) //categoryName
         {
             if (dtgvFood.SelectedCells.Count > 0)
             {
@@ -159,6 +174,62 @@ namespace QuanLyCafe
         private void expandableSplitter2_ExpandedChanged(object sender, DevComponents.DotNetBar.ExpandedChangeEventArgs e)
         {
 
+        }
+
+        private void fadd_Click(object sender, EventArgs e)
+        {
+            string name = tbfoodname.Text;
+            int categoryID = (cbfoodcategory.SelectedItem as CategoryDTO).ID;
+            float price = (float)nmprice.Value;
+
+            if (Food.Instance.InsertFood(name, categoryID, price))
+            {
+                MessageBox.Show("Thêm món thành công");
+                LoadFoodList();
+                if (insertFood != null)
+                    insertFood(this, new EventArgs());
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi thêm thức ăn");
+            }
+        }
+        private event EventHandler insertFood;
+        public event EventHandler InsertFood
+        {
+            add { insertFood += value; }
+            remove { insertFood -= value; }
+        }
+
+        private event EventHandler deleteFood;
+        public event EventHandler DeleteFood
+        {
+            add { deleteFood += value; }
+            remove { deleteFood -= value; }
+        }
+
+        private event EventHandler updateFood;
+        public event EventHandler UpdateFood
+        {
+            add { updateFood += value; }
+            remove { updateFood -= value; }
+        }
+
+        private void Fdelete1_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(tbfoodID.Text);
+
+            if (Food.Instance.DeleteFood(id))
+            {
+                MessageBox.Show("Xóa món thành công");
+                LoadFoodList();
+                if (deleteFood != null)
+                    deleteFood(this, new EventArgs());
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi xóa thức ăn");
+            }
         }
     }
 }

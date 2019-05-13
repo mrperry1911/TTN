@@ -93,7 +93,7 @@
             this.tbfoodname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbfoodID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.fwatch = new System.Windows.Forms.Button();
@@ -103,15 +103,13 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.dtgvFood = new System.Windows.Forms.DataGridView();
             this.tabbill = new System.Windows.Forms.TabPage();
-            this.expandableSplitter1 = new DevComponents.DotNetBar.ExpandableSplitter();
             this.panel4 = new System.Windows.Forms.Panel();
             this.fthongke = new System.Windows.Forms.Button();
             this.dtpkright = new System.Windows.Forms.DateTimePicker();
             this.dtpkleft = new System.Windows.Forms.DateTimePicker();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtgvbill = new System.Windows.Forms.DataGridView();
-            this.tbfoodid = new System.Windows.Forms.TabControl();
-            this.expandableSplitter2 = new DevComponents.DotNetBar.ExpandableSplitter();
+            this.main = new System.Windows.Forms.TabControl();
             this.tabacc.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -148,7 +146,7 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvbill)).BeginInit();
-            this.tbfoodid.SuspendLayout();
+            this.main.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabacc
@@ -756,21 +754,21 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.textBox2);
+            this.panel9.Controls.Add(this.tbfoodID);
             this.panel9.Controls.Add(this.label1);
             this.panel9.Location = new System.Drawing.Point(6, 4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(240, 33);
             this.panel9.TabIndex = 2;
             // 
-            // textBox2
+            // tbfoodID
             // 
-            this.textBox2.Location = new System.Drawing.Point(98, 7);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(138, 20);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.tbfoodID.Location = new System.Drawing.Point(98, 7);
+            this.tbfoodID.Name = "tbfoodID";
+            this.tbfoodID.ReadOnly = true;
+            this.tbfoodID.Size = new System.Drawing.Size(138, 20);
+            this.tbfoodID.TabIndex = 1;
+            this.tbfoodID.TextChanged += new System.EventHandler(this.tbfoodID_TextChanged);
             // 
             // label1
             // 
@@ -811,7 +809,7 @@
             this.Fedit.TabIndex = 2;
             this.Fedit.Text = "Sửa";
             this.Fedit.UseVisualStyleBackColor = true;
-            this.Fedit.Click += new System.EventHandler(this.button3_Click);
+            this.Fedit.Click += new System.EventHandler(this.fedit_Click);
             // 
             // Fdelete1
             // 
@@ -821,6 +819,7 @@
             this.Fdelete1.TabIndex = 1;
             this.Fdelete1.Text = "Xóa";
             this.Fdelete1.UseVisualStyleBackColor = true;
+            this.Fdelete1.Click += new System.EventHandler(this.Fdelete1_Click);
             // 
             // fadd
             // 
@@ -830,6 +829,7 @@
             this.fadd.TabIndex = 0;
             this.fadd.Text = "Thêm";
             this.fadd.UseVisualStyleBackColor = true;
+            this.fadd.Click += new System.EventHandler(this.fadd_Click);
             // 
             // panel5
             // 
@@ -850,8 +850,6 @@
             // 
             // tabbill
             // 
-            this.tabbill.Controls.Add(this.expandableSplitter2);
-            this.tabbill.Controls.Add(this.expandableSplitter1);
             this.tabbill.Controls.Add(this.panel4);
             this.tabbill.Controls.Add(this.panel3);
             this.tabbill.Location = new System.Drawing.Point(4, 22);
@@ -861,38 +859,6 @@
             this.tabbill.TabIndex = 0;
             this.tabbill.Text = "Doanh thu";
             this.tabbill.UseVisualStyleBackColor = true;
-            // 
-            // expandableSplitter1
-            // 
-            this.expandableSplitter1.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
-            this.expandableSplitter1.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandableSplitter1.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.expandableSplitter1.ExpandFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
-            this.expandableSplitter1.ExpandFillColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandableSplitter1.ExpandLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.expandableSplitter1.ExpandLineColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandableSplitter1.GripDarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.expandableSplitter1.GripDarkColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandableSplitter1.GripLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.expandableSplitter1.GripLightColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.expandableSplitter1.HotBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(151)))), ((int)(((byte)(61)))));
-            this.expandableSplitter1.HotBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(94)))));
-            this.expandableSplitter1.HotBackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground2;
-            this.expandableSplitter1.HotBackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground;
-            this.expandableSplitter1.HotExpandFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
-            this.expandableSplitter1.HotExpandFillColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandableSplitter1.HotExpandLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.expandableSplitter1.HotExpandLineColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandableSplitter1.HotGripDarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
-            this.expandableSplitter1.HotGripDarkColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandableSplitter1.HotGripLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.expandableSplitter1.HotGripLightColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.expandableSplitter1.Location = new System.Drawing.Point(3, 3);
-            this.expandableSplitter1.Name = "expandableSplitter1";
-            this.expandableSplitter1.Size = new System.Drawing.Size(6, 286);
-            this.expandableSplitter1.Style = DevComponents.DotNetBar.eSplitterStyle.Office2007;
-            this.expandableSplitter1.TabIndex = 2;
-            this.expandableSplitter1.TabStop = false;
             // 
             // panel4
             // 
@@ -946,51 +912,18 @@
             this.dtgvbill.TabIndex = 0;
             this.dtgvbill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvbill_CellContentClick);
             // 
-            // tbfoodid
+            // main
             // 
-            this.tbfoodid.Controls.Add(this.tabbill);
-            this.tbfoodid.Controls.Add(this.tabfood);
-            this.tbfoodid.Controls.Add(this.tablist);
-            this.tbfoodid.Controls.Add(this.tabtable);
-            this.tbfoodid.Controls.Add(this.tabacc);
-            this.tbfoodid.Location = new System.Drawing.Point(12, 12);
-            this.tbfoodid.Name = "tbfoodid";
-            this.tbfoodid.SelectedIndex = 0;
-            this.tbfoodid.Size = new System.Drawing.Size(563, 318);
-            this.tbfoodid.TabIndex = 0;
-            // 
-            // expandableSplitter2
-            // 
-            this.expandableSplitter2.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
-            this.expandableSplitter2.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandableSplitter2.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.expandableSplitter2.ExpandFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
-            this.expandableSplitter2.ExpandFillColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandableSplitter2.ExpandLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.expandableSplitter2.ExpandLineColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandableSplitter2.GripDarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.expandableSplitter2.GripDarkColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandableSplitter2.GripLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.expandableSplitter2.GripLightColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.expandableSplitter2.HotBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(151)))), ((int)(((byte)(61)))));
-            this.expandableSplitter2.HotBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(94)))));
-            this.expandableSplitter2.HotBackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground2;
-            this.expandableSplitter2.HotBackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground;
-            this.expandableSplitter2.HotExpandFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
-            this.expandableSplitter2.HotExpandFillColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandableSplitter2.HotExpandLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.expandableSplitter2.HotExpandLineColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandableSplitter2.HotGripDarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
-            this.expandableSplitter2.HotGripDarkColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandableSplitter2.HotGripLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.expandableSplitter2.HotGripLightColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.expandableSplitter2.Location = new System.Drawing.Point(9, 3);
-            this.expandableSplitter2.Name = "expandableSplitter2";
-            this.expandableSplitter2.Size = new System.Drawing.Size(6, 286);
-            this.expandableSplitter2.Style = DevComponents.DotNetBar.eSplitterStyle.Office2007;
-            this.expandableSplitter2.TabIndex = 3;
-            this.expandableSplitter2.TabStop = false;
-            this.expandableSplitter2.ExpandedChanged += new DevComponents.DotNetBar.ExpandChangeEventHandler(this.expandableSplitter2_ExpandedChanged);
+            this.main.Controls.Add(this.tabbill);
+            this.main.Controls.Add(this.tabfood);
+            this.main.Controls.Add(this.tablist);
+            this.main.Controls.Add(this.tabtable);
+            this.main.Controls.Add(this.tabacc);
+            this.main.Location = new System.Drawing.Point(12, 12);
+            this.main.Name = "main";
+            this.main.SelectedIndex = 0;
+            this.main.Size = new System.Drawing.Size(563, 318);
+            this.main.TabIndex = 0;
             // 
             // tbfoodcategory
             // 
@@ -998,7 +931,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(587, 342);
-            this.Controls.Add(this.tbfoodid);
+            this.Controls.Add(this.main);
             this.Name = "tbfoodcategory";
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.formadmin_Load);
@@ -1051,7 +984,7 @@
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvbill)).EndInit();
-            this.tbfoodid.ResumeLayout(false);
+            this.main.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1102,7 +1035,7 @@
         private System.Windows.Forms.TextBox tbfoodname;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbfoodID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button fwatch;
@@ -1118,7 +1051,7 @@
         private System.Windows.Forms.DateTimePicker dtpkleft;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dtgvbill;
-        private System.Windows.Forms.TabControl tbfoodid;
+        private System.Windows.Forms.TabControl main;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -1140,7 +1073,5 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button freset;
         private System.Windows.Forms.ComboBox cbfoodcategory;
-        private DevComponents.DotNetBar.ExpandableSplitter expandableSplitter1;
-        private DevComponents.DotNetBar.ExpandableSplitter expandableSplitter2;
     }
 }
