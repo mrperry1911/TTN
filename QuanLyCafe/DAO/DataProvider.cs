@@ -11,7 +11,7 @@ namespace QuanLyCafe.DAO
     class DataProvider
     {
         private static DataProvider instance; // 
-        private string connectionSTR = "Data Source=DESKTOP-JVSARLR;Initial Catalog=QuanLyCafe;Integrated Security=True";
+        private string connectionSTR = @"Data Source=NGOCCHUNG\SQLEXPRESS;Initial Catalog=QuanLyCafe;Integrated Security=True";
 
         internal static DataProvider Instance { get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; } private set { DataProvider.instance = value; } }
 
