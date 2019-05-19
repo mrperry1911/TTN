@@ -25,3 +25,16 @@ C:\Users\-NgocChung-\Desktop\QuanLyCafe\obj\Debug\QuanLyCafe.Properties.Resource
 C:\Users\-NgocChung-\Desktop\QuanLyCafe\obj\Debug\QuanLyCafe.csproj.GenerateResource.Cache
 C:\Users\-NgocChung-\Desktop\QuanLyCafe\bin\Debug\QuanLyCafe.exe
 C:\Users\-NgocChung-\Desktop\QuanLyCafe\bin\Debug\QuanLyCafe.pdb
+C:\Users\-NgocChung-\Desktop\Github\QuanLyCafe\bin\Debug\QuanLyCafe.exe.config
+C:\Users\-NgocChung-\Desktop\Github\QuanLyCafe\obj\Debug\QuanLyCafe.exe
+C:\Users\-NgocChung-\Desktop\Github\QuanLyCafe\obj\Debug\QuanLyCafe.pdb
+C:\Users\-NgocChung-\Desktop\Github\QuanLyCafe\bin\Debug\QuanLyCafe.exe
+C:\Users\-NgocChung-\Desktop\Github\QuanLyCafe\bin\Debug\QuanLyCafe.pdb
+C:\Users\-NgocChung-\Desktop\Github\QuanLyCafe\bin\Debug\DevComponents.DotNetBar2.xml
+C:\Users\-NgocChung-\Desktop\Github\QuanLyCafe\obj\Debug\QuanLyCafe.csprojResolveAssemblyReference.cache
+C:\Users\-NgocChung-\Desktop\Github\QuanLyCafe\obj\Debug\QuanLyCafe.faccountprofile.resources
+C:\Users\-NgocChung-\Desktop\Github\QuanLyCafe\obj\Debug\QuanLyCafe.fLogin.resources
+C:\Users\-NgocChung-\Desktop\Github\QuanLyCafe\obj\Debug\QuanLyCafe.dtgvcateogory.resources
+C:\Users\-NgocChung-\Desktop\Github\QuanLyCafe\obj\Debug\QuanLyCafe.ftablemanager.resources
+C:\Users\-NgocChung-\Desktop\Github\QuanLyCafe\obj\Debug\QuanLyCafe.Properties.Resources.resources
+C:\Users\-NgocChung-\Desktop\Github\QuanLyCafe\obj\Debug\QuanLyCafe.csproj.GenerateResource.Cache

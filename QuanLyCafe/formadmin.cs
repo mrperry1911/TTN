@@ -371,5 +371,31 @@ namespace QuanLyCafe
         {
 
         }
+
+        private event EventHandler insertTable;
+        public event EventHandler InsertTable
+        {
+            add { insertTable += value; }
+            remove { insertTable -= value; }
+        }
+
+        private void faddver3_Click(object sender, EventArgs e)
+        {
+            string name = tbfoodname.Text;
+            //int ID = int.Parse(tbtableid.Text);
+            string status = tbstatus.Text;
+
+            if (Table.Instance.InsertTable(name, status))
+            {
+                MessageBox.Show("Thêm bàn thành công");
+                LoadTableList();
+                if (insertTable != null)
+                    insertTable(this, new EventArgs());
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi thêm bàn");
+            }
+        }
     }
 }

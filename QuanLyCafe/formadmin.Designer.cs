@@ -49,6 +49,7 @@
             this.tabtable = new System.Windows.Forms.TabPage();
             this.panel23 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.tbstatus = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
             this.tbtablename = new System.Windows.Forms.TextBox();
@@ -110,7 +111,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtgvbill = new System.Windows.Forms.DataGridView();
             this.main = new System.Windows.Forms.TabControl();
-            this.tbstatus = new System.Windows.Forms.TextBox();
             this.tabacc.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -350,6 +350,14 @@
             this.panel16.Size = new System.Drawing.Size(240, 33);
             this.panel16.TabIndex = 4;
             // 
+            // tbstatus
+            // 
+            this.tbstatus.Location = new System.Drawing.Point(137, 3);
+            this.tbstatus.Name = "tbstatus";
+            this.tbstatus.Size = new System.Drawing.Size(99, 20);
+            this.tbstatus.TabIndex = 1;
+            this.tbstatus.TextChanged += new System.EventHandler(this.tbstatus_TextChanged);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -467,6 +475,7 @@
             this.faddver3.TabIndex = 0;
             this.faddver3.Text = "Thêm";
             this.faddver3.UseVisualStyleBackColor = true;
+            this.faddver3.Click += new System.EventHandler(this.faddver3_Click);
             // 
             // tablist
             // 
@@ -952,14 +961,6 @@
             this.main.SelectedIndex = 0;
             this.main.Size = new System.Drawing.Size(563, 318);
             this.main.TabIndex = 0;
-            // 
-            // tbstatus
-            // 
-            this.tbstatus.Location = new System.Drawing.Point(137, 3);
-            this.tbstatus.Name = "tbstatus";
-            this.tbstatus.Size = new System.Drawing.Size(99, 20);
-            this.tbstatus.TabIndex = 1;
-            this.tbstatus.TextChanged += new System.EventHandler(this.tbstatus_TextChanged);
             // 
             // dtgvcateogory
             // 
