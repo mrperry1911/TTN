@@ -1,6 +1,6 @@
 ﻿namespace QuanLyCafe
 {
-    partial class tbfoodcategory
+    partial class dtgvcateogory
     {
         /// <summary>
         /// Required designer variable.
@@ -49,15 +49,14 @@
             this.tabtable = new System.Windows.Forms.TabPage();
             this.panel23 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tbtablename = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel27 = new System.Windows.Forms.Panel();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.tbtableid = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dtgvtable = new System.Windows.Forms.DataGridView();
             this.panel21 = new System.Windows.Forms.Panel();
             this.fwatchver3 = new System.Windows.Forms.Button();
             this.feditver3 = new System.Windows.Forms.Button();
@@ -66,13 +65,13 @@
             this.tablist = new System.Windows.Forms.TabPage();
             this.panel22 = new System.Windows.Forms.Panel();
             this.panel25 = new System.Windows.Forms.Panel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tbcategoryName = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel26 = new System.Windows.Forms.Panel();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.tbcategoryID = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.panel20 = new System.Windows.Forms.Panel();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dtgvcategoryFood = new System.Windows.Forms.DataGridView();
             this.panel19 = new System.Windows.Forms.Panel();
             this.fwatchver2 = new System.Windows.Forms.Button();
             this.feditver2 = new System.Windows.Forms.Button();
@@ -103,6 +102,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.dtgvFood = new System.Windows.Forms.DataGridView();
             this.tabbill = new System.Windows.Forms.TabPage();
+            this.expandableSplitter1 = new DevComponents.DotNetBar.ExpandableSplitter();
             this.panel4 = new System.Windows.Forms.Panel();
             this.fthongke = new System.Windows.Forms.Button();
             this.dtpkright = new System.Windows.Forms.DateTimePicker();
@@ -110,6 +110,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtgvbill = new System.Windows.Forms.DataGridView();
             this.main = new System.Windows.Forms.TabControl();
+            this.tbstatus = new System.Windows.Forms.TextBox();
             this.tabacc.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel15.SuspendLayout();
@@ -122,14 +123,14 @@
             this.panel16.SuspendLayout();
             this.panel24.SuspendLayout();
             this.panel27.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvtable)).BeginInit();
             this.panel21.SuspendLayout();
             this.tablist.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel25.SuspendLayout();
             this.panel26.SuspendLayout();
             this.panel20.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvcategoryFood)).BeginInit();
             this.panel19.SuspendLayout();
             this.tabfood.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -269,7 +270,6 @@
             this.dtgvaccount.Name = "dtgvaccount";
             this.dtgvaccount.Size = new System.Drawing.Size(288, 219);
             this.dtgvaccount.TabIndex = 5;
-            this.dtgvaccount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // panel1
             // 
@@ -321,7 +321,7 @@
             // tabtable
             // 
             this.tabtable.Controls.Add(this.panel23);
-            this.tabtable.Controls.Add(this.dataGridView4);
+            this.tabtable.Controls.Add(this.dtgvtable);
             this.tabtable.Controls.Add(this.panel21);
             this.tabtable.Location = new System.Drawing.Point(4, 22);
             this.tabtable.Name = "tabtable";
@@ -343,20 +343,12 @@
             // 
             // panel16
             // 
-            this.panel16.Controls.Add(this.comboBox3);
+            this.panel16.Controls.Add(this.tbstatus);
             this.panel16.Controls.Add(this.label8);
             this.panel16.Location = new System.Drawing.Point(6, 104);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(240, 33);
             this.panel16.TabIndex = 4;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(135, 6);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(101, 21);
-            this.comboBox3.TabIndex = 1;
             // 
             // label8
             // 
@@ -370,19 +362,19 @@
             // 
             // panel24
             // 
-            this.panel24.Controls.Add(this.textBox7);
+            this.panel24.Controls.Add(this.tbtablename);
             this.panel24.Controls.Add(this.label9);
             this.panel24.Location = new System.Drawing.Point(6, 55);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(240, 33);
             this.panel24.TabIndex = 3;
             // 
-            // textBox7
+            // tbtablename
             // 
-            this.textBox7.Location = new System.Drawing.Point(137, 7);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(99, 20);
-            this.textBox7.TabIndex = 1;
+            this.tbtablename.Location = new System.Drawing.Point(137, 7);
+            this.tbtablename.Name = "tbtablename";
+            this.tbtablename.Size = new System.Drawing.Size(99, 20);
+            this.tbtablename.TabIndex = 1;
             // 
             // label9
             // 
@@ -390,26 +382,26 @@
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(3, 8);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(128, 19);
+            this.label9.Size = new System.Drawing.Size(71, 19);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Tên danh mục :";
+            this.label9.Text = "Tên bàn";
             // 
             // panel27
             // 
-            this.panel27.Controls.Add(this.textBox10);
+            this.panel27.Controls.Add(this.tbtableid);
             this.panel27.Controls.Add(this.label10);
             this.panel27.Location = new System.Drawing.Point(6, 4);
             this.panel27.Name = "panel27";
             this.panel27.Size = new System.Drawing.Size(240, 33);
             this.panel27.TabIndex = 2;
             // 
-            // textBox10
+            // tbtableid
             // 
-            this.textBox10.Location = new System.Drawing.Point(137, 7);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(99, 20);
-            this.textBox10.TabIndex = 1;
+            this.tbtableid.Location = new System.Drawing.Point(137, 7);
+            this.tbtableid.Name = "tbtableid";
+            this.tbtableid.ReadOnly = true;
+            this.tbtableid.Size = new System.Drawing.Size(99, 20);
+            this.tbtableid.TabIndex = 1;
             // 
             // label10
             // 
@@ -421,14 +413,13 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "ID :";
             // 
-            // dataGridView4
+            // dtgvtable
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(5, 70);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(288, 219);
-            this.dataGridView4.TabIndex = 4;
-            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick_1);
+            this.dtgvtable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvtable.Location = new System.Drawing.Point(5, 70);
+            this.dtgvtable.Name = "dtgvtable";
+            this.dtgvtable.Size = new System.Drawing.Size(288, 219);
+            this.dtgvtable.TabIndex = 4;
             // 
             // panel21
             // 
@@ -501,19 +492,19 @@
             // 
             // panel25
             // 
-            this.panel25.Controls.Add(this.textBox8);
+            this.panel25.Controls.Add(this.tbcategoryName);
             this.panel25.Controls.Add(this.label11);
             this.panel25.Location = new System.Drawing.Point(6, 55);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(240, 33);
             this.panel25.TabIndex = 3;
             // 
-            // textBox8
+            // tbcategoryName
             // 
-            this.textBox8.Location = new System.Drawing.Point(137, 7);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(99, 20);
-            this.textBox8.TabIndex = 1;
+            this.tbcategoryName.Location = new System.Drawing.Point(136, 7);
+            this.tbcategoryName.Name = "tbcategoryName";
+            this.tbcategoryName.Size = new System.Drawing.Size(100, 20);
+            this.tbcategoryName.TabIndex = 1;
             // 
             // label11
             // 
@@ -524,23 +515,25 @@
             this.label11.Size = new System.Drawing.Size(128, 19);
             this.label11.TabIndex = 0;
             this.label11.Text = "Tên danh mục :";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // panel26
             // 
-            this.panel26.Controls.Add(this.textBox9);
+            this.panel26.Controls.Add(this.tbcategoryID);
             this.panel26.Controls.Add(this.label12);
             this.panel26.Location = new System.Drawing.Point(6, 4);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(240, 33);
             this.panel26.TabIndex = 2;
+            this.panel26.Paint += new System.Windows.Forms.PaintEventHandler(this.panel26_Paint);
             // 
-            // textBox9
+            // tbcategoryID
             // 
-            this.textBox9.Location = new System.Drawing.Point(137, 7);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(99, 20);
-            this.textBox9.TabIndex = 1;
+            this.tbcategoryID.Location = new System.Drawing.Point(137, 7);
+            this.tbcategoryID.Name = "tbcategoryID";
+            this.tbcategoryID.ReadOnly = true;
+            this.tbcategoryID.Size = new System.Drawing.Size(99, 20);
+            this.tbcategoryID.TabIndex = 1;
             // 
             // label12
             // 
@@ -554,19 +547,19 @@
             // 
             // panel20
             // 
-            this.panel20.Controls.Add(this.dataGridView3);
+            this.panel20.Controls.Add(this.dtgvcategoryFood);
             this.panel20.Location = new System.Drawing.Point(6, 69);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(295, 223);
             this.panel20.TabIndex = 3;
             // 
-            // dataGridView3
+            // dtgvcategoryFood
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(3, -4);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(287, 224);
-            this.dataGridView3.TabIndex = 0;
+            this.dtgvcategoryFood.Location = new System.Drawing.Point(5, 4);
+            this.dtgvcategoryFood.Name = "dtgvcategoryFood";
+            this.dtgvcategoryFood.Size = new System.Drawing.Size(287, 213);
+            this.dtgvcategoryFood.TabIndex = 0;
+            this.dtgvcategoryFood.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvcategoryFood_CellContentClick);
             // 
             // panel19
             // 
@@ -587,6 +580,7 @@
             this.fwatchver2.TabIndex = 3;
             this.fwatchver2.Text = "Xem";
             this.fwatchver2.UseVisualStyleBackColor = true;
+            this.fwatchver2.Click += new System.EventHandler(this.fwatchver2_Click);
             // 
             // feditver2
             // 
@@ -596,15 +590,17 @@
             this.feditver2.TabIndex = 2;
             this.feditver2.Text = "Sửa";
             this.feditver2.UseVisualStyleBackColor = true;
+            this.feditver2.Click += new System.EventHandler(this.feditver2_Click);
             // 
             // fdeletever2
             // 
             this.fdeletever2.Location = new System.Drawing.Point(70, 10);
             this.fdeletever2.Name = "fdeletever2";
-            this.fdeletever2.Size = new System.Drawing.Size(59, 48);
+            this.fdeletever2.Size = new System.Drawing.Size(59, 47);
             this.fdeletever2.TabIndex = 1;
             this.fdeletever2.Text = "Xóa";
             this.fdeletever2.UseVisualStyleBackColor = true;
+            this.fdeletever2.Click += new System.EventHandler(this.fdeletever2_Click);
             // 
             // faddver2
             // 
@@ -614,6 +610,7 @@
             this.faddver2.TabIndex = 0;
             this.faddver2.Text = "Thêm";
             this.faddver2.UseVisualStyleBackColor = true;
+            this.faddver2.Click += new System.EventHandler(this.faddver2_Click_1);
             // 
             // tabfood
             // 
@@ -768,7 +765,6 @@
             this.tbfoodID.ReadOnly = true;
             this.tbfoodID.Size = new System.Drawing.Size(138, 20);
             this.tbfoodID.TabIndex = 1;
-            this.tbfoodID.TextChanged += new System.EventHandler(this.tbfoodID_TextChanged);
             // 
             // label1
             // 
@@ -795,7 +791,7 @@
             // 
             this.fwatch.Location = new System.Drawing.Point(200, 10);
             this.fwatch.Name = "fwatch";
-            this.fwatch.Size = new System.Drawing.Size(61, 45);
+            this.fwatch.Size = new System.Drawing.Size(61, 48);
             this.fwatch.TabIndex = 3;
             this.fwatch.Text = "Xem";
             this.fwatch.UseVisualStyleBackColor = true;
@@ -805,7 +801,7 @@
             // 
             this.Fedit.Location = new System.Drawing.Point(135, 10);
             this.Fedit.Name = "Fedit";
-            this.Fedit.Size = new System.Drawing.Size(59, 45);
+            this.Fedit.Size = new System.Drawing.Size(59, 48);
             this.Fedit.TabIndex = 2;
             this.Fedit.Text = "Sửa";
             this.Fedit.UseVisualStyleBackColor = true;
@@ -846,10 +842,10 @@
             this.dtgvFood.Name = "dtgvFood";
             this.dtgvFood.Size = new System.Drawing.Size(287, 216);
             this.dtgvFood.TabIndex = 0;
-            this.dtgvFood.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // tabbill
             // 
+            this.tabbill.Controls.Add(this.expandableSplitter1);
             this.tabbill.Controls.Add(this.panel4);
             this.tabbill.Controls.Add(this.panel3);
             this.tabbill.Location = new System.Drawing.Point(4, 22);
@@ -859,6 +855,39 @@
             this.tabbill.TabIndex = 0;
             this.tabbill.Text = "Doanh thu";
             this.tabbill.UseVisualStyleBackColor = true;
+            // 
+            // expandableSplitter1
+            // 
+            this.expandableSplitter1.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
+            this.expandableSplitter1.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.expandableSplitter1.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.expandableSplitter1.ExpandFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
+            this.expandableSplitter1.ExpandFillColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.expandableSplitter1.ExpandLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.expandableSplitter1.ExpandLineColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
+            this.expandableSplitter1.GripDarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.expandableSplitter1.GripDarkColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
+            this.expandableSplitter1.GripLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.expandableSplitter1.GripLightColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.expandableSplitter1.HotBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(151)))), ((int)(((byte)(61)))));
+            this.expandableSplitter1.HotBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(94)))));
+            this.expandableSplitter1.HotBackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground2;
+            this.expandableSplitter1.HotBackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground;
+            this.expandableSplitter1.HotExpandFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
+            this.expandableSplitter1.HotExpandFillColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.expandableSplitter1.HotExpandLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.expandableSplitter1.HotExpandLineColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
+            this.expandableSplitter1.HotGripDarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
+            this.expandableSplitter1.HotGripDarkColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.expandableSplitter1.HotGripLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.expandableSplitter1.HotGripLightColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.expandableSplitter1.Location = new System.Drawing.Point(3, 3);
+            this.expandableSplitter1.Name = "expandableSplitter1";
+            this.expandableSplitter1.Size = new System.Drawing.Size(6, 286);
+            this.expandableSplitter1.Style = DevComponents.DotNetBar.eSplitterStyle.Office2007;
+            this.expandableSplitter1.TabIndex = 2;
+            this.expandableSplitter1.TabStop = false;
+            this.expandableSplitter1.ExpandedChanged += new DevComponents.DotNetBar.ExpandChangeEventHandler(this.expandableSplitter1_ExpandedChanged_1);
             // 
             // panel4
             // 
@@ -910,7 +939,6 @@
             this.dtgvbill.Name = "dtgvbill";
             this.dtgvbill.Size = new System.Drawing.Size(546, 251);
             this.dtgvbill.TabIndex = 0;
-            this.dtgvbill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvbill_CellContentClick);
             // 
             // main
             // 
@@ -925,14 +953,22 @@
             this.main.Size = new System.Drawing.Size(563, 318);
             this.main.TabIndex = 0;
             // 
-            // tbfoodcategory
+            // tbstatus
+            // 
+            this.tbstatus.Location = new System.Drawing.Point(137, 3);
+            this.tbstatus.Name = "tbstatus";
+            this.tbstatus.Size = new System.Drawing.Size(99, 20);
+            this.tbstatus.TabIndex = 1;
+            this.tbstatus.TextChanged += new System.EventHandler(this.tbstatus_TextChanged);
+            // 
+            // dtgvcateogory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(587, 342);
             this.Controls.Add(this.main);
-            this.Name = "tbfoodcategory";
+            this.Name = "dtgvcateogory";
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.formadmin_Load);
             this.tabacc.ResumeLayout(false);
@@ -953,7 +989,7 @@
             this.panel24.PerformLayout();
             this.panel27.ResumeLayout(false);
             this.panel27.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvtable)).EndInit();
             this.panel21.ResumeLayout(false);
             this.tablist.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
@@ -962,7 +998,7 @@
             this.panel26.ResumeLayout(false);
             this.panel26.PerformLayout();
             this.panel20.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvcategoryFood)).EndInit();
             this.panel19.ResumeLayout(false);
             this.tabfood.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -995,12 +1031,12 @@
         private System.Windows.Forms.TabPage tabtable;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Panel panel24;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tbtablename;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel27;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox tbtableid;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView dtgvtable;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Button fwatchver3;
         private System.Windows.Forms.Button feditver3;
@@ -1009,13 +1045,12 @@
         private System.Windows.Forms.TabPage tablist;
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.Panel panel25;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel26;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox tbcategoryID;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dtgvcategoryFood;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Button fwatchver2;
         private System.Windows.Forms.Button feditver2;
@@ -1069,9 +1104,11 @@
         private System.Windows.Forms.Button fdeletever4;
         private System.Windows.Forms.Button faddver4;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button freset;
         private System.Windows.Forms.ComboBox cbfoodcategory;
+        private System.Windows.Forms.TextBox tbcategoryName;
+        private DevComponents.DotNetBar.ExpandableSplitter expandableSplitter1;
+        private System.Windows.Forms.TextBox tbstatus;
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
             this.panel1 = new System.Windows.Forms.Panel();
             this.flpanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -90,9 +91,9 @@
             // flpanel
             // 
             this.flpanel.AutoScroll = true;
-            this.flpanel.Location = new System.Drawing.Point(3, 27);
+            this.flpanel.Location = new System.Drawing.Point(3, 30);
             this.flpanel.Name = "flpanel";
-            this.flpanel.Size = new System.Drawing.Size(262, 313);
+            this.flpanel.Size = new System.Drawing.Size(262, 310);
             this.flpanel.TabIndex = 6;
             this.flpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flpanel_Paint);
             // 
@@ -112,6 +113,8 @@
             this.COUNT,
             this.Price,
             this.Total});
+            this.lvbill.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1});
             this.lvbill.Location = new System.Drawing.Point(3, 3);
             this.lvbill.Name = "lvbill";
             this.lvbill.Size = new System.Drawing.Size(269, 181);

@@ -16,20 +16,30 @@ using System.Windows.Forms;
 
 namespace QuanLyCafe
 {
-    public partial class tbfoodcategory : Form
+    public partial class dtgvcateogory : Form
     {
         BindingSource foodList = new BindingSource();
-        public tbfoodcategory()
+        BindingSource categoryList = new BindingSource();
+        BindingSource tableList = new BindingSource();
+
+        public dtgvcateogory()
         {
-            
-            
+
+           
             InitializeComponent();
             dtgvFood.DataSource = foodList;
+            dtgvcategoryFood.DataSource = categoryList;
+            dtgvtable.DataSource = tableList;
             LoadFoodList();
             LoadListByDate(dtpkleft.Value, dtpkright.Value);
             LoadDateTimePickerBill();
             AddFoodBinding();
             LoadCategoryIntoCombobox(cbfoodcategory);
+            LoadCategoryList();
+            AddCategoryBinding();
+            LoadTableList();
+            AddTableBinding();
+
         }
         #region Method
         void LoadDateTimePickerBill()
@@ -39,9 +49,17 @@ namespace QuanLyCafe
             dtpkright.Value = dtpkleft.Value.AddMonths(1).AddDays(-1);
         
         }
+        void LoadCategoryList()
+        {
+            categoryList.DataSource = Category.Instance.GetListCategory();
+        }
         void LoadFoodList()
         {
             foodList.DataSource = Food.Instance.GetListFood();
+        }
+        void LoadTableList()
+        {
+            tableList.DataSource = Table.Instance.LoadTableList();
         }
         void LoadListByDate(DateTime checkIn,DateTime checkOut)
         {
@@ -56,11 +74,62 @@ namespace QuanLyCafe
             nmprice.DataBindings.Add(new Binding("Value", dtgvFood.DataSource, "Price", true, DataSourceUpdateMode.Never));
     
         }
+
+        void AddCategoryBinding()
+        {
+            tbcategoryID.DataBindings.Add(new Binding("Text", dtgvcategoryFood.DataSource, "ID", true, DataSourceUpdateMode.Never));
+            tbcategoryName.DataBindings.Add(new Binding("Text", dtgvcategoryFood.DataSource, "Name", true, DataSourceUpdateMode.Never));
+        }
+        void AddTableBinding()
+        {
+            tbtableid.DataBindings.Add(new Binding("Text", dtgvtable.DataSource, "ID", true, DataSourceUpdateMode.Never));
+            tbtablename.DataBindings.Add(new Binding("Text",dtgvtable.DataSource, "Name", true, DataSourceUpdateMode.Never));
+            tbstatus.DataBindings.Add(new Binding("Text", dtgvtable.DataSource, "Status", true, DataSourceUpdateMode.Never));
+        }
+
+
         void LoadCategoryIntoCombobox(ComboBox box)
         {
             box.DataSource = Category.Instance.GetListCategory();
             box.DisplayMember = "Name";
         }
+        void AddCategory(string name)
+        {
+            if (Category.Instance.InsertCategory(name))
+            {
+                MessageBox.Show("Thêm loại món thành công");
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi thêm loại món");
+            }
+            LoadCategoryList();
+        }
+        void UpdateCategory(string name,int id)
+        {
+            if(Category.Instance.UpdateCategory(name,id))
+            {
+                MessageBox.Show("Sửa loại món thành công");
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi sửa loại món");
+            }
+            LoadCategoryList();
+        }
+        void DeleteCategory(int id)
+        {
+            if(Category.Instance.DeleteCategory(id))
+            {
+                MessageBox.Show("Xóa loại món thành công");
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi xóa loại món");
+            }
+            LoadCategoryList();
+        }
+           
         #endregion
         #region event
         private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -103,25 +172,6 @@ namespace QuanLyCafe
 
         }
 
-        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView4_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
 
         private void fthongke_Click(object sender, EventArgs e)
         {
@@ -129,10 +179,7 @@ namespace QuanLyCafe
         }
         #endregion
 
-        private void dtgvbill_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+       
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -165,11 +212,14 @@ namespace QuanLyCafe
                     }
                     i++;
                 }
-            
-           
-            cbfoodcategory.SelectedIndex = index;
+
+
+                cbfoodcategory.SelectedIndex = index;
             }
         }
+       
+
+
 
         private void expandableSplitter2_ExpandedChanged(object sender, DevComponents.DotNetBar.ExpandedChangeEventArgs e)
         {
@@ -194,6 +244,8 @@ namespace QuanLyCafe
                 MessageBox.Show("Có lỗi khi thêm thức ăn");
             }
         }
+
+ 
         private event EventHandler insertFood;
         public event EventHandler InsertFood
         {
@@ -224,12 +276,100 @@ namespace QuanLyCafe
                 MessageBox.Show("Xóa món thành công");
                 LoadFoodList();
                 if (deleteFood != null)
-                    deleteFood(this, new EventArgs());
+                    deleteFood(this, new EventArgs());  
             }
             else
             {
                 MessageBox.Show("Có lỗi khi xóa thức ăn");
             }
+        }
+
+     
+
+        //private event EventHandler insertCategory;
+        //public event EventHandler InsertCategory
+        //{
+        //    add { insertCategory += value; }
+        //    remove { insertCategory -= value; }
+        //}
+
+        //private event EventHandler deleteCategory;
+        //public event EventHandler DeleteCategory
+        //{
+        //    add { deleteCategory += value; }
+        //    remove { deleteCategory -= value; }
+        //}
+
+        //private event EventHandler updateCategory;
+        //public event EventHandler UpdateCategory
+        //{
+        //    add { updateCategory += value; }
+        //    remove { updateCategory -= value; }
+        //}
+
+        private void panel26_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbcategory2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fwatchver2_Click(object sender, EventArgs e)
+        {
+            LoadCategoryList();
+        }
+
+        private void expandableSplitter1_ExpandedChanged(object sender, DevComponents.DotNetBar.ExpandedChangeEventArgs e)
+        {
+
+        }
+
+        private void expandableSplitter2_ExpandedChanged_1(object sender, DevComponents.DotNetBar.ExpandedChangeEventArgs e)
+        {
+
+        }
+
+        private void dtgvcategoryFood_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void faddver2_Click_1(object sender, EventArgs e)
+        {
+            string name = tbcategoryName.Text;
+            AddCategory(name);
+        }
+
+        private void expandableSplitter1_ExpandedChanged_1(object sender, DevComponents.DotNetBar.ExpandedChangeEventArgs e)
+        {
+
+        }
+
+        private void feditver2_Click(object sender, EventArgs e)
+        {
+            string name = tbcategoryName.Text;
+            int id = Convert.ToInt32(tbcategoryID.Text);
+            UpdateCategory(name,id);
+        }
+
+        private void fdeletever2_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(tbcategoryID.Text);
+            DeleteCategory(id);
+
+        }
+
+        private void tbstatus_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

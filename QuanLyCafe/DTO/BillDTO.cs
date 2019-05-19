@@ -37,14 +37,74 @@ namespace QuanLyCafe.DTO
         private int iD;
         private int discount;
 
-        public int ID { get => iD; set => iD = value; }
-        public DateTime? DateCheckIn { get => dateCheckIn; set => dateCheckIn = value; }
-        public DateTime? DateCheckOut { get => dateCheckOut; set => dateCheckOut = value; }
-        public int Status { get => status; set => status = value; }
-        public int Discount { get => discount; set => discount = value; }
-
+ 
         private DateTime? dateCheckIn;
         private DateTime? dateCheckOut;
+
+        public int Status
+        {
+            get
+            {
+                return status;
+            }
+
+            set
+            {
+                status = value;
+            }
+        }
+
+        public int ID
+        {
+            get
+            {
+                return iD;
+            }
+
+            set
+            {
+                iD = value;
+            }
+        }
+
+        public int Discount
+        {
+            get
+            {
+                return discount;
+            }
+
+            set
+            {
+                discount = value;
+            }
+        }
+
+        public DateTime? DateCheckIn
+        {
+            get
+            {
+                return dateCheckIn;
+            }
+
+            set
+            {
+                dateCheckIn = value;
+            }
+        }
+
+        public DateTime? DateCheckOut
+        {
+            get
+            {
+                return dateCheckOut;
+            }
+
+            set
+            {
+                dateCheckOut = value;
+            }
+        }
     }
 
 }

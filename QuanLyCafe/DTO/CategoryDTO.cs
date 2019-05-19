@@ -11,6 +11,33 @@ namespace QuanLyCafe.DTO
     {
         private string name;
         private int iD;
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+
+            set
+            {
+                name = value;
+            }
+        }
+
+        public int ID
+        {
+            get
+            {
+                return iD;
+            }
+
+            set
+            {
+                iD = value;
+            }
+        }
+
         public CategoryDTO(int id,string name)
         {
             this.ID = id;
@@ -23,7 +50,6 @@ namespace QuanLyCafe.DTO
         }
 
 
-        public string Name { get => name; set => name = value; }
-        public int ID { get => iD; set => iD = value; }
+      
     }
 }

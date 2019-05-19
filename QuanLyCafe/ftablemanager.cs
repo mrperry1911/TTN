@@ -115,7 +115,7 @@ namespace QuanLyCafe
         private void ftablemanager_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'quanLyCafeDataSet.FoodCategory' table. You can move, or remove it, as needed.
-            this.foodCategoryTableAdapter.Fill(this.quanLyCafeDataSet.FoodCategory);
+           // this.foodCategoryTableAdapter.Fill(this.quanLyCafeDataSet.FoodCategory);
 
         }
 
@@ -142,11 +142,12 @@ namespace QuanLyCafe
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tbfoodcategory f = new tbfoodcategory();
+            dtgvcateogory f = new dtgvcateogory();
             f.InsertFood += f_InsertFood;
             f.DeleteFood += f_DeleteFood;
             f.UpdateFood += f_UpdateFood;
             f.ShowDialog();
+
         }
         void f_UpdateFood(object sender, EventArgs e)
         {
@@ -156,6 +157,7 @@ namespace QuanLyCafe
         }
 
         void f_DeleteFood(object sender, EventArgs e)
+
         {
             LoadFoodListByCategory((cbCategory.SelectedItem as CategoryDTO).ID);
             if (lvbill.Tag != null)

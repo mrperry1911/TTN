@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -23,7 +24,7 @@ namespace QuanLyCafe.DTO
             this.Status = row["status"].ToString();
         }
 
-        public string Status { get; set; }
+        private string status;
 
         private string name;
 
@@ -39,6 +40,12 @@ namespace QuanLyCafe.DTO
         {
             get { return iD; }
             set { iD = value; }
+        }
+
+        public string Status
+        {
+            get { return status; }
+            set { status = value; }
         }
     }
 }

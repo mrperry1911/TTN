@@ -28,9 +28,57 @@ namespace QuanLyCafe.DTO
         private int billID;
         private int foodID;
         private int count;
-        public int ID { get => iD; set => iD = value; }
-        public int BillID { get => billID; set => billID = value; }
-        public int FoodID { get => foodID; set => foodID = value; }
-        public int Count { get => count; set => count = value; }
+
+        public int ID
+        {
+            get
+            {
+                return iD;
+            }
+
+            set
+            {
+                iD = value;
+            }
+        }
+
+        public int BillID
+        {
+            get
+            {
+                return billID;
+            }
+
+            set
+            {
+                billID = value;
+            }
+        }
+
+        public int FoodID
+        {
+            get
+            {
+                return foodID;
+            }
+
+            set
+            {
+                foodID = value;
+            }
+        }
+
+        public int Count
+        {
+            get
+            {
+                return count;
+            }
+
+            set
+            {
+                count = value;
+            }
+        }
     }
 }
