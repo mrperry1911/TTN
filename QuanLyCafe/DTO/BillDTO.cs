@@ -36,23 +36,8 @@ namespace QuanLyCafe.DTO
         private int status;
         private int iD;
         private int discount;
-
- 
         private DateTime? dateCheckIn;
         private DateTime? dateCheckOut;
-
-        public int Status
-        {
-            get
-            {
-                return status;
-            }
-
-            set
-            {
-                status = value;
-            }
-        }
 
         public int ID
         {
@@ -64,6 +49,19 @@ namespace QuanLyCafe.DTO
             set
             {
                 iD = value;
+            }
+        }
+
+        public int Status
+        {
+            get
+            {
+                return status;
+            }
+
+            set
+            {
+                status = value;
             }
         }
 

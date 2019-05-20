@@ -13,7 +13,7 @@ namespace QuanLyCafe.DAO
         private static DataProvider instance; // 
         private string connectionSTR = "Data Source=NGOCCHUNG\\SQLEXPRESS;Initial Catalog=QuanLyCafe;Integrated Security=True";
 
-        public static DataProvider Instance { get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; } private set { DataProvider.instance = value; } }
+        internal static DataProvider Instance { get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; } private set { DataProvider.instance = value; } }
 
 
         public int ExecuteNonQuery(string query, object[] parameter = null)

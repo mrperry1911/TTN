@@ -32,13 +32,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.freset = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.nmtype = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbdisplayrid = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbaccid = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dtgvaccount = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -80,7 +80,7 @@
             this.faddver2 = new System.Windows.Forms.Button();
             this.tabfood = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.cbcategory = new System.Windows.Forms.TextBox();
+            this.tbsearch = new System.Windows.Forms.TextBox();
             this.fsearch = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -103,7 +103,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.dtgvFood = new System.Windows.Forms.DataGridView();
             this.tabbill = new System.Windows.Forms.TabPage();
-            this.expandableSplitter1 = new DevComponents.DotNetBar.ExpandableSplitter();
             this.panel4 = new System.Windows.Forms.Panel();
             this.fthongke = new System.Windows.Forms.Button();
             this.dtpkright = new System.Windows.Forms.DateTimePicker();
@@ -114,6 +113,7 @@
             this.tabacc.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmtype)).BeginInit();
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvaccount)).BeginInit();
@@ -182,23 +182,23 @@
             this.freset.TabIndex = 5;
             this.freset.Text = "Cài lại mật khẩu";
             this.freset.UseVisualStyleBackColor = true;
+            this.freset.Click += new System.EventHandler(this.freset_Click);
             // 
             // panel15
             // 
-            this.panel15.Controls.Add(this.comboBox1);
+            this.panel15.Controls.Add(this.nmtype);
             this.panel15.Controls.Add(this.label7);
             this.panel15.Location = new System.Drawing.Point(6, 103);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(240, 33);
             this.panel15.TabIndex = 4;
             // 
-            // comboBox1
+            // nmtype
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(137, 8);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(103, 21);
-            this.comboBox1.TabIndex = 1;
+            this.nmtype.Location = new System.Drawing.Point(135, 7);
+            this.nmtype.Name = "nmtype";
+            this.nmtype.Size = new System.Drawing.Size(49, 20);
+            this.nmtype.TabIndex = 1;
             // 
             // label7
             // 
@@ -212,19 +212,19 @@
             // 
             // panel13
             // 
-            this.panel13.Controls.Add(this.textBox4);
+            this.panel13.Controls.Add(this.tbdisplayrid);
             this.panel13.Controls.Add(this.label5);
             this.panel13.Location = new System.Drawing.Point(6, 55);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(240, 33);
             this.panel13.TabIndex = 3;
             // 
-            // textBox4
+            // tbdisplayrid
             // 
-            this.textBox4.Location = new System.Drawing.Point(137, 7);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(99, 20);
-            this.textBox4.TabIndex = 1;
+            this.tbdisplayrid.Location = new System.Drawing.Point(137, 7);
+            this.tbdisplayrid.Name = "tbdisplayrid";
+            this.tbdisplayrid.Size = new System.Drawing.Size(99, 20);
+            this.tbdisplayrid.TabIndex = 1;
             // 
             // label5
             // 
@@ -238,20 +238,19 @@
             // 
             // panel14
             // 
-            this.panel14.Controls.Add(this.textBox5);
+            this.panel14.Controls.Add(this.tbaccid);
             this.panel14.Controls.Add(this.label6);
             this.panel14.Location = new System.Drawing.Point(6, 4);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(240, 33);
             this.panel14.TabIndex = 2;
             // 
-            // textBox5
+            // tbaccid
             // 
-            this.textBox5.Location = new System.Drawing.Point(137, 7);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(99, 20);
-            this.textBox5.TabIndex = 1;
+            this.tbaccid.Location = new System.Drawing.Point(137, 7);
+            this.tbaccid.Name = "tbaccid";
+            this.tbaccid.Size = new System.Drawing.Size(99, 20);
+            this.tbaccid.TabIndex = 1;
             // 
             // label6
             // 
@@ -299,6 +298,7 @@
             this.feditver4.TabIndex = 2;
             this.feditver4.Text = "Sửa";
             this.feditver4.UseVisualStyleBackColor = true;
+            this.feditver4.Click += new System.EventHandler(this.feditver4_Click);
             // 
             // fdeletever4
             // 
@@ -308,6 +308,7 @@
             this.fdeletever4.TabIndex = 1;
             this.fdeletever4.Text = "Xóa";
             this.fdeletever4.UseVisualStyleBackColor = true;
+            this.fdeletever4.Click += new System.EventHandler(this.fdeletever4_Click);
             // 
             // faddver4
             // 
@@ -317,6 +318,7 @@
             this.faddver4.TabIndex = 0;
             this.faddver4.Text = "Thêm";
             this.faddver4.UseVisualStyleBackColor = true;
+            this.faddver4.Click += new System.EventHandler(this.faddver4_Click);
             // 
             // tabtable
             // 
@@ -457,6 +459,7 @@
             this.feditver3.TabIndex = 2;
             this.feditver3.Text = "Sửa";
             this.feditver3.UseVisualStyleBackColor = true;
+            this.feditver3.Click += new System.EventHandler(this.feditver3_Click);
             // 
             // fdeletever3
             // 
@@ -466,6 +469,7 @@
             this.fdeletever3.TabIndex = 1;
             this.fdeletever3.Text = "Xóa";
             this.fdeletever3.UseVisualStyleBackColor = true;
+            this.fdeletever3.Click += new System.EventHandler(this.fdeletever3_Click);
             // 
             // faddver3
             // 
@@ -637,19 +641,19 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.cbcategory);
+            this.panel8.Controls.Add(this.tbsearch);
             this.panel8.Controls.Add(this.fsearch);
             this.panel8.Location = new System.Drawing.Point(302, 3);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(253, 63);
             this.panel8.TabIndex = 3;
             // 
-            // cbcategory
+            // tbsearch
             // 
-            this.cbcategory.Location = new System.Drawing.Point(7, 23);
-            this.cbcategory.Name = "cbcategory";
-            this.cbcategory.Size = new System.Drawing.Size(159, 20);
-            this.cbcategory.TabIndex = 1;
+            this.tbsearch.Location = new System.Drawing.Point(7, 23);
+            this.tbsearch.Name = "tbsearch";
+            this.tbsearch.Size = new System.Drawing.Size(159, 20);
+            this.tbsearch.TabIndex = 1;
             // 
             // fsearch
             // 
@@ -659,6 +663,7 @@
             this.fsearch.TabIndex = 0;
             this.fsearch.Text = "Thêm";
             this.fsearch.UseVisualStyleBackColor = true;
+            this.fsearch.Click += new System.EventHandler(this.fsearch_Click);
             // 
             // panel7
             // 
@@ -854,7 +859,6 @@
             // 
             // tabbill
             // 
-            this.tabbill.Controls.Add(this.expandableSplitter1);
             this.tabbill.Controls.Add(this.panel4);
             this.tabbill.Controls.Add(this.panel3);
             this.tabbill.Location = new System.Drawing.Point(4, 22);
@@ -864,39 +868,6 @@
             this.tabbill.TabIndex = 0;
             this.tabbill.Text = "Doanh thu";
             this.tabbill.UseVisualStyleBackColor = true;
-            // 
-            // expandableSplitter1
-            // 
-            this.expandableSplitter1.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
-            this.expandableSplitter1.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandableSplitter1.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.expandableSplitter1.ExpandFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
-            this.expandableSplitter1.ExpandFillColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandableSplitter1.ExpandLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.expandableSplitter1.ExpandLineColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandableSplitter1.GripDarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.expandableSplitter1.GripDarkColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandableSplitter1.GripLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.expandableSplitter1.GripLightColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.expandableSplitter1.HotBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(151)))), ((int)(((byte)(61)))));
-            this.expandableSplitter1.HotBackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(94)))));
-            this.expandableSplitter1.HotBackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground2;
-            this.expandableSplitter1.HotBackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground;
-            this.expandableSplitter1.HotExpandFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
-            this.expandableSplitter1.HotExpandFillColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandableSplitter1.HotExpandLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.expandableSplitter1.HotExpandLineColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.expandableSplitter1.HotGripDarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(147)))), ((int)(((byte)(207)))));
-            this.expandableSplitter1.HotGripDarkColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.expandableSplitter1.HotGripLightColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.expandableSplitter1.HotGripLightColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.expandableSplitter1.Location = new System.Drawing.Point(3, 3);
-            this.expandableSplitter1.Name = "expandableSplitter1";
-            this.expandableSplitter1.Size = new System.Drawing.Size(6, 286);
-            this.expandableSplitter1.Style = DevComponents.DotNetBar.eSplitterStyle.Office2007;
-            this.expandableSplitter1.TabIndex = 2;
-            this.expandableSplitter1.TabStop = false;
-            this.expandableSplitter1.ExpandedChanged += new DevComponents.DotNetBar.ExpandChangeEventHandler(this.expandableSplitter1_ExpandedChanged_1);
             // 
             // panel4
             // 
@@ -976,6 +947,7 @@
             this.panel2.ResumeLayout(false);
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmtype)).EndInit();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             this.panel14.ResumeLayout(false);
@@ -1059,7 +1031,7 @@
         private System.Windows.Forms.Button faddver2;
         private System.Windows.Forms.TabPage tabfood;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox cbcategory;
+        private System.Windows.Forms.TextBox tbsearch;
         private System.Windows.Forms.Button fsearch;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel12;
@@ -1090,13 +1062,12 @@
         private System.Windows.Forms.TabControl main;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbdisplayrid;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tbaccid;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dtgvaccount;
         private System.Windows.Forms.Panel panel1;
@@ -1109,7 +1080,7 @@
         private System.Windows.Forms.Button freset;
         private System.Windows.Forms.ComboBox cbfoodcategory;
         private System.Windows.Forms.TextBox tbcategoryName;
-        private DevComponents.DotNetBar.ExpandableSplitter expandableSplitter1;
         private System.Windows.Forms.TextBox tbstatus;
+        private System.Windows.Forms.NumericUpDown nmtype;
     }
 }

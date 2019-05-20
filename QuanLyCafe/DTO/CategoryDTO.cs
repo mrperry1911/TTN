@@ -12,19 +12,6 @@ namespace QuanLyCafe.DTO
         private string name;
         private int iD;
 
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-
-            set
-            {
-                name = value;
-            }
-        }
-
         public int ID
         {
             get
@@ -35,6 +22,19 @@ namespace QuanLyCafe.DTO
             set
             {
                 iD = value;
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+
+            set
+            {
+                name = value;
             }
         }
 

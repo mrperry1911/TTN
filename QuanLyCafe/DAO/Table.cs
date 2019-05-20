@@ -30,39 +30,35 @@ namespace QuanLyCafe.DAO
             }
             return tablelist;
         }
-
-        public void SwitchTable(int id1 , int id2)
+        public bool InsertTable(string name,string status)
         {
-            DataProvider.Instance.ExecuteQuery("USP_SwitchTabel @idTable1 , @idTable2", new object[] { id1, id2 });
-        }
-        public bool InsertTable(string name, string status)
-        {
-            string query = string.Format("INSERT dbo.Table ( name, status )VALUES  ( N'{0}', {1})", name,status);
+            string query = string.Format("INSERT INTO dbo.TableFood(name, status )VALUES  ( N'{0}', N'{1}')", name, status);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
         }
 
-        //public bool UpdateFood(int id, string name, string status)
-        //{
-        //    string query = string.Format("UPDATE dbo.Table SET name = N'{0}', id = {1}, status = {2} WHERE id = {3}", name, id, status);
-        //    int result = DataProvider.Instance.ExecuteNonQuery(query);
+        public bool UpdateTable(string name, string status,int id)
+        {
+            string query = string.Format("UPDATE dbo.TableFood SET name = N'{0}', status = N'{1}' WHERE id = {2}", name,status,id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
 
-        //    return result > 0;
-        //}
-        //public bool DeleteTable(int id)
-        //{
-        //    Table.Instance.DeleteTableByID(id);
+            return result > 0;
+        }
+        public bool DeleteTable(int id)
+        {
+            //BillInfo.Instance.DeleteBillInfoByFoodID(idFood);
 
-        //    string query = string.Format("Delete Table where id = {0}", id);
-        //    int result = DataProvider.Instance.ExecuteNonQuery(query);
+            string query = string.Format("Delete TableFood where id = {0}", id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
 
-        //    return result > 0;
-        //}
-        //public void DeleteTableByID(int id)
-        //{
-        //    DataProvider.Instance.ExecuteQuery("delete dbo.Table where id = " + id);
-        //}
+            return result > 0;
+        }
+        public void SwitchTable(int id1 , int id2)
+        {
+            DataProvider.Instance.ExecuteQuery("USP_SwitchTabel @idTable1 , @idTable2", new object[] { id1, id2 });
+        }
+
 
     }
 }

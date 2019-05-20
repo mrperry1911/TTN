@@ -39,7 +39,7 @@ namespace QuanLyCafe
                 ftablemanager f = new ftablemanager(loginaccount);
                 this.Hide();
                 f.ShowDialog();
-               // this.Show();
+                this.Show();
             }
             else
             {

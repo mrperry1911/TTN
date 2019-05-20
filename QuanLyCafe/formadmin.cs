@@ -21,6 +21,10 @@ namespace QuanLyCafe
         BindingSource foodList = new BindingSource();
         BindingSource categoryList = new BindingSource();
         BindingSource tableList = new BindingSource();
+        BindingSource accountList = new BindingSource();
+        public AccountDTO LoginAccount;
+
+        
 
         public dtgvcateogory()
         {
@@ -30,6 +34,7 @@ namespace QuanLyCafe
             dtgvFood.DataSource = foodList;
             dtgvcategoryFood.DataSource = categoryList;
             dtgvtable.DataSource = tableList;
+            dtgvaccount.DataSource = accountList;
             LoadFoodList();
             LoadListByDate(dtpkleft.Value, dtpkright.Value);
             LoadDateTimePickerBill();
@@ -39,6 +44,8 @@ namespace QuanLyCafe
             AddCategoryBinding();
             LoadTableList();
             AddTableBinding();
+            LoadAccount();
+            AddAccountBinding();
 
         }
         #region Method
@@ -60,6 +67,10 @@ namespace QuanLyCafe
         void LoadTableList()
         {
             tableList.DataSource = Table.Instance.LoadTableList();
+        }
+        void LoadAccount()
+        {
+            accountList.DataSource = Account.Instance.GetListAccount();
         }
         void LoadListByDate(DateTime checkIn,DateTime checkOut)
         {
@@ -83,11 +94,22 @@ namespace QuanLyCafe
         void AddTableBinding()
         {
             tbtableid.DataBindings.Add(new Binding("Text", dtgvtable.DataSource, "ID", true, DataSourceUpdateMode.Never));
-            tbtablename.DataBindings.Add(new Binding("Text",dtgvtable.DataSource, "Name", true, DataSourceUpdateMode.Never));
+            tbtablename.DataBindings.Add(new Binding("Text", dtgvtable.DataSource, "Name", true, DataSourceUpdateMode.Never));
             tbstatus.DataBindings.Add(new Binding("Text", dtgvtable.DataSource, "Status", true, DataSourceUpdateMode.Never));
         }
+        void AddAccountBinding()
+        {
+            tbaccid.DataBindings.Add(new Binding("Text", dtgvaccount.DataSource, "UserName", true, DataSourceUpdateMode.Never));
+            tbdisplayrid.DataBindings.Add(new Binding("Text", dtgvaccount.DataSource, "DisplayName", true, DataSourceUpdateMode.Never));
+            nmtype.DataBindings.Add(new Binding("Value", dtgvaccount.DataSource, "Type", true, DataSourceUpdateMode.Never));
+        }
 
+        List<FoodDTO> SearchFoodByName(string name)
+        {
+            List<FoodDTO> listFood = Food.Instance.SearchFoodbyName(name);
 
+            return listFood;
+        }
         void LoadCategoryIntoCombobox(ComboBox box)
         {
             box.DataSource = Category.Instance.GetListCategory();
@@ -129,7 +151,100 @@ namespace QuanLyCafe
             }
             LoadCategoryList();
         }
-           
+        void AddTable(string name,string status)
+        {
+            if (Table.Instance.InsertTable(name,status))
+            {
+                MessageBox.Show("Thêm bàn thành công");
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi thêm bàn");
+            }
+            LoadTableList();
+        }
+        void UpdateTable(string name,string status,int id)
+        {
+            if (Table.Instance.UpdateTable(name,status,id))
+            {
+                MessageBox.Show("Sửa bàn thành công");
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi sửa bàn");
+            }
+            LoadTableList();
+        }
+        void DeleteTable(int id)
+        {
+            if (Table.Instance.DeleteTable(id))
+            {
+                MessageBox.Show("Xóa bànthành công");
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi xóa bàn");
+            }
+            LoadTableList();
+        }
+        void AddAccount(string userName, string displayName, int type)
+        {
+            if (Account.Instance.InsertAccount(userName, displayName, type))
+            {
+                MessageBox.Show("Thêm tài khoản thành công");
+            }
+            else
+            {
+                MessageBox.Show("Thêm tài khoản thất bại");
+            }
+
+            LoadAccount();
+        }
+
+        void EditAccount(string userName, string displayName, int type)
+        {
+            if (Account.Instance.UpdateAccount(userName, displayName, type))
+            {
+                MessageBox.Show("Cập nhật tài khoản thành công");
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật tài khoản thất bại");
+            }
+
+            LoadAccount();
+        }
+
+        void DeleteAccount(string userName)
+        {
+            if (LoginAccount.UserName.Equals(userName))
+            {
+                MessageBox.Show("Vui lòng đừng xóa chính bạn chứ");
+                return;
+            }
+            if (Account.Instance.DeleteAccount(userName))
+            {
+                MessageBox.Show("Xóa tài khoản thành công");
+            }
+            else
+            {
+                MessageBox.Show("Xóa tài khoản thất bại");
+            }
+
+            LoadAccount();
+        }
+        void ResetPass(string userName)
+        {
+            if (Account.Instance.ResetPassword(userName))
+            {
+                MessageBox.Show("Đặt lại mật khẩu thành công");
+            }
+            else
+            {
+                MessageBox.Show("Đặt lại mật khẩu thất bại");
+            }
+        }
+
         #endregion
         #region event
         private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -372,30 +487,64 @@ namespace QuanLyCafe
 
         }
 
-        private event EventHandler insertTable;
-        public event EventHandler InsertTable
-        {
-            add { insertTable += value; }
-            remove { insertTable -= value; }
-        }
-
         private void faddver3_Click(object sender, EventArgs e)
         {
-            string name = tbfoodname.Text;
-            //int ID = int.Parse(tbtableid.Text);
+            string name = tbtableid.Text;
             string status = tbstatus.Text;
+            AddTable(name,status);
+        }
 
-            if (Table.Instance.InsertTable(name, status))
-            {
-                MessageBox.Show("Thêm bàn thành công");
-                LoadTableList();
-                if (insertTable != null)
-                    insertTable(this, new EventArgs());
-            }
-            else
-            {
-                MessageBox.Show("Có lỗi khi thêm bàn");
-            }
+        private void fdeletever3_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(tbtableid.Text);
+            DeleteTable(id);
+        }
+
+        private void feditver3_Click(object sender, EventArgs e)
+        {
+            string name = tbtablename.Text;
+            string status = tbstatus.Text;
+            int id = Convert.ToInt32(tbtableid.Text);
+            UpdateTable(name, status, id);
+        }
+
+        private void faddver4_Click(object sender, EventArgs e)
+        {
+            string userName = tbaccid.Text;
+            string displayName = tbdisplayrid.Text;
+            int type = (int)nmtype.Value;
+            AddAccount(userName, displayName, type);
+        }
+
+        private void fdeletever4_Click(object sender, EventArgs e)
+        {
+            string userName = tbaccid.Text;
+            DeleteAccount(userName);
+        }
+
+        private void feditver4_Click(object sender, EventArgs e)
+        {
+            string userName = tbaccid.Text;
+            string displayName = tbdisplayrid.Text;
+            int type = (int)nmtype.Value;
+
+            EditAccount(userName, displayName, type);
+        }
+
+        private void freset_Click(object sender, EventArgs e)
+        {
+            string userName = tbaccid.Text;
+            ResetPass(userName);
+        }
+
+        private void fsearch_Click(object sender, EventArgs e)
+        {
+            foodList.DataSource = SearchFoodByName(tbsearch.Text);
+        }
+
+        private void expandableSplitter2_ExpandedChanged_2(object sender, DevComponents.DotNetBar.ExpandedChangeEventArgs e)
+        {
+
         }
     }
 }

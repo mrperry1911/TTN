@@ -81,6 +81,23 @@ namespace QuanLyCafe.DAO
         {
             DataProvider.Instance.ExecuteQuery("delete dbo.Food where idCategory = " + id);
         }
+        public List<FoodDTO> SearchFoodbyName(string name)
+        {
+            List<FoodDTO> list = new List<FoodDTO>();
+
+            string query = string.Format("SELECT * FROM dbo.Food WHERE dbo.fuConvertToUnsign1(name) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%'", name);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                FoodDTO food = new FoodDTO(item);
+                list.Add(food);
+            }
+
+            return list;
+        }
+
     }
 }
 
